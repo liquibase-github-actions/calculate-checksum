@@ -6,7 +6,7 @@ Calculates and prints a checksum for the changeset
 ```yaml
 steps:
 - uses: actions/checkout@v3
-- uses: liquibase-github-actions/calculate-checksum@v4.19.1
+- uses: liquibase-github-actions/calculate-checksum@v4.20.0
   with:
     # The root changelog file
     # string
@@ -22,6 +22,11 @@ steps:
     # string
     # Required
     url: ""
+
+    # 
+    # string
+    # Optional
+    database: ""
 
     # The default catalog name to use for the database connection
     # string
@@ -43,12 +48,17 @@ steps:
     # Optional
     driverPropertiesFile: ""
 
-    # The database password
+    # Password to use to connect to the database
     # string
     # Optional
     password: ""
 
-    # The database username
+    # 
+    # bool
+    # Optional
+    skipDatabaseStep: ""
+
+    # Username to use to connect to the database
     # string
     # Optional
     username: ""
@@ -65,7 +75,7 @@ The liquibase calculate checksum action accepts all valid liquibase global optio
 ```yaml
 steps:
   - uses: actions/checkout@v3
-  - uses: liquibase-github-actions/calculate-checksum@v4.19.1
+  - uses: liquibase-github-actions/calculate-checksum@v4.20.0
     with:
       changelogFile: ""
       changesetIdentifier: ""
