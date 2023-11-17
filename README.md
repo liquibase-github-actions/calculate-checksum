@@ -6,22 +6,37 @@ Calculates and prints a checksum for the changeset
 ```yaml
 steps:
 - uses: actions/checkout@v3
-- uses: liquibase-github-actions/calculate-checksum@v4.24.0
+- uses: liquibase-github-actions/calculate-checksum@v4.25.0
   with:
     # The root changelog file
     # string
     # Required
     changelogFile: ""
 
-    # Changeset ID identifier of form filepath::id::author
-    # string
-    # Required
-    changesetIdentifier: ""
-
     # The JDBC database connection URL
     # string
     # Required
     url: ""
+
+    # ChangeSet Author attribute
+    # string
+    # Optional
+    changesetAuthor: ""
+
+    # ChangeSet ID attribute
+    # string
+    # Optional
+    changesetId: ""
+
+    # ChangeSet identifier of form filepath::id::author
+    # string
+    # Optional
+    changesetIdentifier: ""
+
+    # Changelog path in which the changeSet is included
+    # string
+    # Optional
+    changesetPath: ""
 
     # The default catalog name to use for the database connection
     # string
@@ -65,10 +80,9 @@ The liquibase calculate checksum action accepts all valid liquibase global optio
 ```yaml
 steps:
   - uses: actions/checkout@v3
-  - uses: liquibase-github-actions/calculate-checksum@v4.24.0
+  - uses: liquibase-github-actions/calculate-checksum@v4.25.0
     with:
       changelogFile: ""
-      changesetIdentifier: ""
       url: ""
       headless: true
       licenseKey: ${{ secrets.LIQUIBASE_LICENSE_KEY }}
