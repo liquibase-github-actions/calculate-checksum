@@ -6,7 +6,7 @@ Calculates and prints a checksum for the changeset
 ```yaml
 steps:
 - uses: actions/checkout@v3
-- uses: liquibase-github-actions/calculate-checksum@v4.29.1
+- uses: liquibase-github-actions/calculate-checksum@v4.29.2
   with:
     # The root changelog file
     # string
@@ -80,7 +80,7 @@ The liquibase calculate checksum action accepts all valid liquibase global optio
 ```yaml
 steps:
   - uses: actions/checkout@v3
-  - uses: liquibase-github-actions/calculate-checksum@v4.29.1
+  - uses: liquibase-github-actions/calculate-checksum@v4.29.2
     with:
       changelogFile: ""
       url: ""
